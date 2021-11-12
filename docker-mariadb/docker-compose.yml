@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+  db:
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: dpw2017vmag!
+      MYSQL_USER: nestjs
+      MYSQL_PASSWORD: typeorm
+      MYSQL_DATABASE: nestjs_typeorm
+      MYSQL_PORT: 3306
+      MYSQL_ROOT_HOST: '%'
+    volumes:
+      - ./mariadb:/var/lib/mysql
+    ports:
+      - 3306:3306
